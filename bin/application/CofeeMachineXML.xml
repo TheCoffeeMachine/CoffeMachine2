@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+	<VBox xmlns:fx="http://javafx.com/fxml" 
+	
+		fx:controller="application.CoffeeMachine" alignment="center" spacing="10" >
+		<Label text="Coffee Machine"/>
+		
+	<Label text=" "/>
+
+	<TextField fx:id="moneyPaid" maxWidth="75" />
+
+	<Button  fx:id="pay" text="Add money" onAction="#checkMoney"/>
+	
+	<Label text="Please select how you want your coffee" />
+	
+	<HBox alignment="center" spacing="10">
+		<fx:define>
+
+		<ToggleGroup fx:id="sizeRadioButtons"/>
+		</fx:define>
+
+		<RadioButton fx:id="natural" text="Black Coffee" selected="true" toggleGroup="$sizeRadioButtons" onAction="#setCoffee"/>
+		<RadioButton fx:id="sugar" text="Coffee with sugar" toggleGroup="$sizeRadioButtons" onAction="#setCoffee"/>
+		<RadioButton fx:id="cream" text="Coffee with cream" toggleGroup="$sizeRadioButtons" onAction="#setCoffee"/>
+		<RadioButton fx:id="sugarCream" text="Coffee with sugar and cream" toggleGroup="$sizeRadioButtons" onAction="#setCoffee"/>
+		</HBox>
+	
+		<Button fx:id="brew" text="Brew" onAction="#makeCoffee"/>
+		
+		<Label fx:id= "finish" text=""/>
+			
+</VBox>
+
+ 
