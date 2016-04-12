@@ -1,8 +1,5 @@
 package application;
 
-
-import javax.swing.JOptionPane;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -19,13 +16,15 @@ public class MachineController {
 
 		/** Initialization that define a scale of 10 by default
 		It also enable to guess button and text field**/
-		public void initialize( ) {
+		@FXML public void initialize( ) {
 			cm = new CoffeeMachine();
+			/*
 			natural.setDisable(true);
 			sugar.setDisable(true);
 			cream.setDisable(true);
 			sugarCream.setDisable(true);
 			brew.setDisable(true);
+			*/
 		}
 		/** Initialization that define a scale of 10 by default
 		 *It also enable to guess button and text field**/
@@ -56,8 +55,6 @@ public class MachineController {
 		 * two numbers and return a string that is shown on the 
 		 * bottom of the box **/
 		@FXML protected void makeCoffee ( ActionEvent event) {
-			
 			cm.Start();
-			
 		}
 	}

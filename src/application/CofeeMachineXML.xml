@@ -5,7 +5,7 @@
 
 	<VBox xmlns:fx="http://javafx.com/fxml" 
 	
-		fx:controller="application.CoffeeMachine" alignment="center" spacing="10" >
+		fx:controller="application.MachineController" alignment="center" spacing="10" >
 		<Label text="Coffee Machine"/>
 		
 	<Label text=" "/>
