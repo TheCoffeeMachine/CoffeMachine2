@@ -12,7 +12,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			VBox root = FXMLLoader.load(getClass().getResource("CofeeMachineXML.xml"));
-			Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root,800,500);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

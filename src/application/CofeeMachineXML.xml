@@ -7,12 +7,16 @@
 	
 		fx:controller="application.MachineController" alignment="center" spacing="10" >
 		<Label text="Coffee Machine"/>
-		
+	
+	<Label fx:id= "machineStatus" text=""/>
+	
 	<Label text=" "/>
 
 	<TextField fx:id="moneyPaid" maxWidth="75" />
 
 	<Button  fx:id="pay" text="Add money" onAction="#checkMoney"/>
+	
+	<Label fx:id= "moneyStatus" text=""/>
 	
 	<Label text="Please select how you want your coffee" />
 	
@@ -31,6 +35,8 @@
 		<Button fx:id="brew" text="Brew" onAction="#makeCoffee"/>
 		
 		<Label fx:id= "finish" text=""/>
+		
+		<Button fx:id="refresh" text="Refresh Stock" onAction="#refreshStock"/>
 			
 </VBox>
 

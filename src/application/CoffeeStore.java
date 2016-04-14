@@ -13,7 +13,6 @@ public class CoffeeStore {
   coffee = factory.makeCoffee(type);
  
   coffee.prepare();
-  coffee.heatWater();
   coffee.finishPooring();
 
   return coffee;

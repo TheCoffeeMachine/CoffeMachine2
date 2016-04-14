@@ -5,7 +5,8 @@ public class CoffeeMachine {
 	  CoffeeFactory factory = new CoffeeFactory( );
 	  CoffeeStore store = new CoffeeStore( factory );
 	  Coffee coffee;
-	  String CoffeeType;
+	  String coffeeType;
+	  double price;
 
 	public CoffeeMachine()
 	{
@@ -14,14 +15,14 @@ public class CoffeeMachine {
 	
 	
 	// Should be onAction on the controller to initialize the machine and check that it works
-	public void initialisation()
+	public String checkStatus()
 	{
 		 if (MachineStock.CheckStock() == true)
 			 // to update as the text on the controller
-			 System.out.println("The machine is ready to use, you can put your money");
+			 return ("The machine is ready to use, you can put your money");
 		 //We should also at this moment enable the button so the user can use them
 		 else 
-			 System.out.println("We are sorry but the machine is actually not working");
+			 return ("We are sorry but the machine is actually not working");
 		 //Keep the buttons disabled to make sure the user does nothing
 	}
 	
@@ -29,68 +30,92 @@ public class CoffeeMachine {
 	//and 
 	public void Start()
 	{
-		if (checkMoney() == true)
-		{
-			displayMoney();
-		}
-		else 
-		{
-			
-			displayMoney();
-			coffee = store.orderCoffee(CoffeeType);
-			  System.out.println("you just ordered a " + coffee.getName( ) + "\n");
-			  MachineStock.updateStock(CoffeeType);
-			  afterpurchase();
-		}
-		 
-		
+	
+			MachineMoney.resetAmount();
+			coffee = store.orderCoffee(coffeeType);
+			System.out.println("you just ordered a " + coffee.getName( ) + "\n");
+			MachineStock.updateStock(coffeeType);
+			afterpurchase();
 		
 	}
 	
 	public void addMoney (double amount){
+		//try catch
 		MachineMoney.addMoney(amount);
 	}
 	
 	//Check if there is enough money
 	public boolean checkMoney()
-	{
-		if (MachineMoney.checkChange() > 0)
+	{	
+		
+		/*if (MachineMoney.getAmout() >= .35)
+		{
 			return true;
-			else return false;
+		}
+		else
+			{
+			return false;
+			}
+			*/
+		return true;
 	}
 	
 	//Displays if there is enough money
-	public void displayMoney()
-	{
-		if (MachineMoney.getAmout() < MachineMoney.getPrice()){
-			System.out.println ("Please insert " + MachineMoney.checkChange());
+	public String displayMoney()
+	
+	{/*
+		if (MachineMoney.getAmout() >= coffee.getPrice()){
+		return ( "Please add " + (coffee.getPrice() - MachineMoney.getAmout()));
 		}
-		else if (MachineMoney.getAmout() > MachineMoney.getPrice()){
-			System.out.println ("Take your change: " + (MachineMoney.checkChange() * (-1)));
-			MachineMoney.resetAmount();
-		}
-		
+		else
+			{
+			return ("take you change" + (MachineMoney.getAmout() - coffee.getPrice()) );
+			}
+			*/
+		return ("you put: " + MachineMoney.getAmout());
+	}
+	
+	public String moneyProblem(){
+		return ("Please add more money");
 	}
 	
 	//after the purchase we check the stock again to make sure it's good for the 
 	//next costumer or send a message to refresh the stock 
-	public void afterpurchase(){
+	public String afterpurchase(){
 		
 		if (MachineStock.CheckStock() == false){
 			if (MachineStock.getCoffeeStock() <= 0)
-			 System.out.println("The coffee needs to be refreshed");
+			  return ("The coffee needs to be refreshed");
 			else if (MachineStock.getSugarStock() <= 0)
-			 System.out.println("The sugar needs to be refreshed");
+			 return ("The sugar needs to be refreshed");
 			else if (MachineStock.getCreamStock() <= 0)
-				 System.out.println("The cream needs to be refreshed");
+				return  ("The cream needs to be refreshed");
 		}
 		
 		//We should reset the money count here 
 		
-		System.out.println("Next coffee is ready to be served");
+		return ("Next coffee is ready to be served");
 	}
 	
-	public void setCoffeeType(String ct){
-		this.CoffeeType =ct;
+	public boolean CheckStock(){
+	
+		if (MachineStock.CheckStock() == false){
+			return false;
+		}
+		else return true;
+	}
+	
+	public void refreshStock(){
+		MachineStock.refreshStock("type");
+	}
+	
+	
+	public void setCoffeeType(String ct)
+	{
+		this.coffeeType = ct;
+	}
+	
+	public void setPrice(double sp){
+		this.price = sp;;
 	}
 }

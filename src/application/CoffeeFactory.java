@@ -5,13 +5,13 @@ public class CoffeeFactory {
 	 public Coffee makeCoffee( String type ) {
 	  Coffee coffee = null;
 
-	  if (type.equals("Natural")) {
+	  if (type.equals("natural")) {
 	   coffee = new CoffeeNatural( );
-	  } else if (type.equals("Sugar")) {
+	  } else if (type.equals("sugar")) {
 	   coffee = new CoffeeSugar( );
-	  } else if (type.equals("Cream")) {
+	  } else if (type.equals("cream")) {
 	   coffee = new CoffeeCream( );
-	  } else if (type.equals("SugarCream")) {
+	  } else if (type.equals("sugarCream")) {
 		   coffee = new CoffeeSugarCream( );
 	  }
 	  return coffee;

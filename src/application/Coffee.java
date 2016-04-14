@@ -2,22 +2,30 @@ package application;
 
 
 abstract public class Coffee {
- String name;
- String type;
+	
+   String name;
+   String type;
+   double price;
  
 
+ public double getPrice(){
+	 return price ;
+ }
+ 
+ public void setPrice( double newPrice){
+	 this.price = newPrice ;
+ }
+ 
  public String getName( ) {
   return name;
  }
 
  public void prepare() {
   System.out.println("Preparing " + name);
-	  System.out.print ("with " + type );
+	  System.out.println ("with " + type );
+	  System.out.print ("cost " + getPrice() );
+	  
   System.out.println();
- }
-
- public void heatWater( ) {
-  System.out.println("heating water ");
  }
 
  public void finishPooring() {

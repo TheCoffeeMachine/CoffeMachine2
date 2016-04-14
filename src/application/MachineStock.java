@@ -2,9 +2,9 @@ package application;
 
 public class MachineStock {
 	
-	private static int CoffeeStock;
-	private static int SugarStock;
-	private static int CreamStock;
+	private static int CoffeeStock = 3;
+	private static int SugarStock = 100;
+	private static int CreamStock = 100;
 	private static int StockCapacity = 100;
 	
 	
@@ -31,13 +31,13 @@ public class MachineStock {
 	//When we refresh the stock we call this method
 	public static void refreshStock(String type)
 	{
-		if (type == "Coffee"){
-			CoffeeStock = StockCapacity;
-		} else if (type == "Sugar"){
-			SugarStock = StockCapacity;
-		} else if (type == "Cream"){
-			SugarStock = StockCapacity;
-		}
+		//if (type == "Coffee"){
+			CoffeeStock += StockCapacity;
+		//} else if (type == "Sugar"){
+			SugarStock += StockCapacity;
+		//} else if (type == "Cream"){
+			SugarStock += StockCapacity;
+		//}
 		
 	}
 	
