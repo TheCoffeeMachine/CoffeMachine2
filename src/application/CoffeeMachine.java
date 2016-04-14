@@ -28,6 +28,11 @@ public class CoffeeMachine {
 	
 	// this method is called every time the costumer try to order a coffee
 	//and 
+	
+	public void init(){
+		coffee = store.orderCoffee(coffeeType);
+	}
+	
 	public void Start()
 	{
 	
@@ -48,7 +53,7 @@ public class CoffeeMachine {
 	public boolean checkMoney()
 	{	
 		
-		/*if (MachineMoney.getAmout() >= .35)
+		if (MachineMoney.getAmout() >= coffee.getPrice())
 		{
 			return true;
 		}
@@ -56,23 +61,26 @@ public class CoffeeMachine {
 			{
 			return false;
 			}
-			*/
-		return true;
+		
 	}
 	
 	//Displays if there is enough money
 	public String displayMoney()
 	
-	{/*
-		if (MachineMoney.getAmout() >= coffee.getPrice()){
+	{
+		if (MachineMoney.getAmout() <= coffee.getPrice())
+		{
+			if (MachineMoney.getAmout() != coffee.getPrice())
 		return ( "Please add " + (coffee.getPrice() - MachineMoney.getAmout()));
+			else 
+		return ( "You put " + MachineMoney.getAmout() + " ready to order");
 		}
 		else
 			{
-			return ("take you change" + (MachineMoney.getAmout() - coffee.getPrice()) );
+			return ("take you change " + (MachineMoney.getAmout() - coffee.getPrice()) );
 			}
-			*/
-		return ("you put: " + MachineMoney.getAmout());
+			
+		//return ("you put: " + MachineMoney.getAmout());
 	}
 	
 	public String moneyProblem(){

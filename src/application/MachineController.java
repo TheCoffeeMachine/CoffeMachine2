@@ -21,6 +21,7 @@ public class MachineController {
 			cm = new CoffeeMachine();
 			
 			cm.setCoffeeType ("natural");
+			cm.init();
 			
 			machineStatus.setText( cm.checkStatus());
 			
