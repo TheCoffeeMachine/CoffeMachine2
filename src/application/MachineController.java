@@ -68,6 +68,7 @@ public class MachineController {
 				cream.setDisable(false);
 				sugarCream.setDisable(false);
 				brew.setDisable(false);
+				finish.setText( "");
 				}
 			
 			moneyStatus.setText(cm.displayMoney());
