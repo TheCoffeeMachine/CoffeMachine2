@@ -11,7 +11,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			VBox root = FXMLLoader.load(getClass().getResource("CofeeMachineXML.xml"));
+			VBox root = FXMLLoader.load(getClass().getResource("CMXML2.xml"));
 			Scene scene = new Scene(root,800,500);
 			primaryStage.setScene(scene);
 			primaryStage.show();

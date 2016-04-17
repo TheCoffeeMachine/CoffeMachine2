@@ -30,7 +30,7 @@ public class CoffeeMachine {
 	//and 
 	
 	public void init(){
-		coffee = store.orderCoffee(coffeeType);
+		coffee = store.orderCoffee("init");
 	}
 	
 	public void Start()
@@ -61,7 +61,6 @@ public class CoffeeMachine {
 			{
 			return false;
 			}
-		
 	}
 	
 	//Displays if there is enough money
@@ -83,8 +82,8 @@ public class CoffeeMachine {
 		//return ("you put: " + MachineMoney.getAmout());
 	}
 	
-	public String moneyProblem(){
-		return ("Please add more money");
+	public String showMoney(){
+		return ( "You put " + MachineMoney.getAmout());
 	}
 	
 	//after the purchase we check the stock again to make sure it's good for the 

@@ -13,6 +13,8 @@ public class CoffeeFactory {
 	   coffee = new CoffeeCream( );
 	  } else if (type.equals("sugarCream")) {
 		   coffee = new CoffeeSugarCream( );
+	  } else if (type.equals("init")) {
+		   coffee = new Coffeeinit( );
 	  }
 	  return coffee;
 	 }
