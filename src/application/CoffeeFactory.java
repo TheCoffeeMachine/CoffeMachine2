@@ -6,17 +6,15 @@ public class CoffeeFactory {
 	  Coffee coffee = null;
 
 	  if (type.equals("natural")) {
-	   coffee = new CoffeeNatural( );
+	   coffee = new CoffeeNatural();
 	  } else if (type.equals("sugar")) {
-	   coffee = new CoffeeSugar( );
+	   coffee = new CoffeeSugar();
 	  } else if (type.equals("cream")) {
-	   coffee = new CoffeeCream( );
+	   coffee = new CoffeeCream();
 	  } else if (type.equals("sugarCream")) {
 		   coffee = new CoffeeSugarCream( );
-	  } else if (type.equals("init")) {
-		   coffee = new Coffeeinit( );
 	  } else if (type.equals("bouillon")) {
-		   coffee = new Bouillon( );
+		   coffee = new Bouillon();
 	  }
 	  return coffee;
 	 }

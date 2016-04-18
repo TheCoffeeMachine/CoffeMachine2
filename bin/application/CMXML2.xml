@@ -18,8 +18,11 @@
 	</HBox>
 	
 	<HBox alignment="center" spacing="10">
+	
 	<Button  fx:id="fivec" text="5 cts" onAction="#addMoney"/>
+	
 	<Button  fx:id="tenc" text="10 cts" onAction="#addMoney"/>
+	
 	<Button  fx:id="twentyfivec" text="25 cts" onAction="#addMoney"/>
 	</HBox>
 	

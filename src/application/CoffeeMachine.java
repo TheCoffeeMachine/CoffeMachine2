@@ -17,8 +17,6 @@ public class CoffeeMachine {
 		
 	}
 	
-	
-	// Should be onAction on the controller to initialize the machine and check that it works
 	public String checkStatus()
 	{
 		 if (MachineStock.CheckStock() == true)
@@ -30,11 +28,8 @@ public class CoffeeMachine {
 		 //Keep the buttons disabled to make sure the user does nothing
 	}
 	
-	// this method is called every time the costumer try to order a coffee
-	//and 
-	
 	public void init(){
-		coffee = store.orderCoffee("init");
+		//coffee = store.orderCoffee("init");
 	}
 	
 	public void Start()
@@ -53,7 +48,6 @@ public class CoffeeMachine {
 		MachineMoney.addMoney(amount);
 	}
 	
-	//Check if there is enough money
 	public boolean checkMoney()
 	{	
 		
@@ -67,7 +61,6 @@ public class CoffeeMachine {
 			}
 	}
 	
-	//Displays if there is enough money
 	public String displayMoney()
 	
 	{
@@ -90,8 +83,6 @@ public class CoffeeMachine {
 		return ( "You put " + MONEY.format(MachineMoney.getAmout()));
 	}
 	
-	//after the purchase we check the stock again to make sure it's good for the 
-	//next costumer or send a message to refresh the stock 
 	public String afterpurchase(){
 		
 		if (MachineStock.CheckStock() == false){
@@ -120,10 +111,11 @@ public class CoffeeMachine {
 		MachineStock.refreshStock("type");
 	}
 	
-	
 	public void setCoffeeType(String ct)
 	{
 		this.coffeeType = ct;
+		coffee = store.setCoffee(ct);
+		
 	}
 	
 	public void setPrice(double sp){

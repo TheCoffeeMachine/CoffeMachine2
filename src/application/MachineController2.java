@@ -107,12 +107,15 @@ public class MachineController2 {
 				sugar.setDisable(true);
 				cream.setDisable(true);
 				sugarCream.setDisable(true);
+				bouillon.setDisable(true);
 				}
 			
 			}
 			
 		}
-		
+		/* This method calls the refreshStock in the CoffeeMachine 
+		 * class and enable the buttons so then they can be used again
+		 * */
 		@FXML protected void refreshStock ( ActionEvent event){
 			cm.refreshStock();
 			initialize();
@@ -125,6 +128,7 @@ public class MachineController2 {
 			sugar.setDisable(false);
 			cream.setDisable(false);
 			sugarCream.setDisable(false);
+			bouillon.setDisable(false);
 		}
 		
 	}
