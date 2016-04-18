@@ -9,7 +9,7 @@ public class MachineController2 {
 
 		@FXML private Label finish, machineStatus, moneyStatus, moneyMissing, moneyReturn;
 		@FXML private Button fivec, tenc, twentyfivec, oned, fived, refresh;
-		@FXML private Button natural, sugar, cream, sugarCream;
+		@FXML private Button natural, sugar, cream, sugarCream, bouillon;
 		
 		private CoffeeMachine cm;
 
@@ -42,6 +42,9 @@ public class MachineController2 {
 			}
 			else if ( event.getSource() == sugarCream ) {
 				cm.setCoffeeType ("sugarCream");
+			}
+			else if ( event.getSource() == bouillon ) {
+				cm.setCoffeeType ("bouillon");
 			}
 		}
 		
@@ -108,10 +111,6 @@ public class MachineController2 {
 			
 			}
 			
-			else
-				{
-				moneyMissing.setText(cm.displayMoney());
-				}
 		}
 		
 		@FXML protected void refreshStock ( ActionEvent event){

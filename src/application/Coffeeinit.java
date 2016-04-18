@@ -5,7 +5,7 @@ public class Coffeeinit extends Coffee {
 	 public Coffeeinit() {
 			name = "initialisationCM";
 			type = "Coffee";
-			price = .35;
+			price = 0.35;
 			
 		} 
 

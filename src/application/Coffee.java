@@ -23,7 +23,6 @@ abstract public class Coffee {
  public void prepare() {
   System.out.println("Preparing " + name);
 	  System.out.println ("with " + type );
-	  System.out.print ("cost " + getPrice() );
 	  
   System.out.println();
  }

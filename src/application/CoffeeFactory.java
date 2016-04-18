@@ -15,6 +15,8 @@ public class CoffeeFactory {
 		   coffee = new CoffeeSugarCream( );
 	  } else if (type.equals("init")) {
 		   coffee = new Coffeeinit( );
+	  } else if (type.equals("bouillon")) {
+		   coffee = new Bouillon( );
 	  }
 	  return coffee;
 	 }

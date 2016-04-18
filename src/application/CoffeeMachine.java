@@ -1,5 +1,7 @@
 package application;
 
+import java.text.DecimalFormat;
+
 public class CoffeeMachine {
 	
 	  CoffeeFactory factory = new CoffeeFactory( );
@@ -7,6 +9,8 @@ public class CoffeeMachine {
 	  Coffee coffee;
 	  String coffeeType;
 	  double price;
+	  
+	  public final DecimalFormat MONEY = new DecimalFormat("$##.##");
 
 	public CoffeeMachine()
 	{
@@ -70,20 +74,20 @@ public class CoffeeMachine {
 		if (MachineMoney.getAmout() <= coffee.getPrice())
 		{
 			if (MachineMoney.getAmout() != coffee.getPrice())
-		return ( "Please add " + (coffee.getPrice() - MachineMoney.getAmout()));
+		return ( "Please add " + MONEY.format((coffee.getPrice() - MachineMoney.getAmout())));
 			else 
-		return ( "You put " + MachineMoney.getAmout() + " ready to order");
+		return ( "You put " + MONEY.format( MachineMoney.getAmout()) + " ready to order");
 		}
 		else
 			{
-			return ("take you change " + (MachineMoney.getAmout() - coffee.getPrice()) );
+			return ("take you change " + MONEY.format((MachineMoney.getAmout() - coffee.getPrice())) );
 			}
 			
 		//return ("you put: " + MachineMoney.getAmout());
 	}
 	
 	public String showMoney(){
-		return ( "You put " + MachineMoney.getAmout());
+		return ( "You put " + MONEY.format(MachineMoney.getAmout()));
 	}
 	
 	//after the purchase we check the stock again to make sure it's good for the 

@@ -30,14 +30,13 @@
 	
 	<Label text="Please select how you want your coffee" />
 	
-	<Label fx:id= "moneyMissing" text=""/>
-	
 	<HBox alignment="center" spacing="10">
 	<Button  fx:id="natural" text="Black Coffee" onAction="#makeCoffee"/>
 	<Button  fx:id="sugar" text="Coffee with sugar" onAction="#makeCoffee"/>
 	<Button  fx:id="cream" text="Coffee with cream" onAction="#makeCoffee"/>
 	<Button  fx:id="sugarCream" text="Coffee with sugar and cream" onAction="#makeCoffee"/>
 	</HBox>
+	<Button  fx:id="bouillon" text="Bouillon" onAction="#makeCoffee"/>
 		
 		<Label fx:id= "finish" text=""/>
 		
