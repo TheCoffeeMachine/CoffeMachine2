@@ -67,7 +67,7 @@ public class CoffeeMachine {
 		if (MachineMoney.getAmout() <= coffee.getPrice())
 		{
 			if (MachineMoney.getAmout() != coffee.getPrice())
-		return ( "Please add " + MONEY.format((coffee.getPrice() - MachineMoney.getAmout())));
+		return ( "Please insert " + MONEY.format((coffee.getPrice() - MachineMoney.getAmout())));
 			else 
 		return ( "You put " + MONEY.format( MachineMoney.getAmout()) + " ready to order");
 		}
@@ -96,7 +96,7 @@ public class CoffeeMachine {
 		
 		//We should reset the money count here 
 		
-		return ("Next coffee is ready to be served");
+		return (" Thank you for your purchase, the next coffee is now ready to be served");
 	}
 	
 	public boolean CheckStock(){

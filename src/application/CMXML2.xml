@@ -5,7 +5,7 @@
 
 	<VBox xmlns:fx="http://javafx.com/fxml" 
 	
-		fx:controller="application.MachineController2" alignment="center" spacing="10" >
+		fx:controller="application.MachineController2" alignment="center" spacing="20" >
 		<Label text="Coffee Machine"/>
 	
 	<Label fx:id= "machineStatus" text=""/>
@@ -19,14 +19,14 @@
 	
 	<HBox alignment="center" spacing="10">
 	
-	<Button  fx:id="fivec" text="5 cts" onAction="#addMoney"/>
+	<Button  fx:id="fivec" text="5¢" onAction="#addMoney"/>
 	
-	<Button  fx:id="tenc" text="10 cts" onAction="#addMoney"/>
+	<Button  fx:id="tenc" text="10¢" onAction="#addMoney"/>
 	
-	<Button  fx:id="twentyfivec" text="25 cts" onAction="#addMoney"/>
+	<Button  fx:id="twentyfivec" text="25¢" onAction="#addMoney"/>
 	</HBox>
 	
-	<HBox alignment="center" spacing="10">
+	<HBox alignment="center" spacing="30">
 	<Button  fx:id="oned" text="1 dollar" onAction="#addMoney"/>
 	<Button  fx:id="fived" text="5 dollars" onAction="#addMoney"/>
 	</HBox>

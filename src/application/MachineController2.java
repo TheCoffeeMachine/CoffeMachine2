@@ -3,6 +3,7 @@ package application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.shape.Circle;
 
 
 public class MachineController2 {
@@ -25,6 +26,13 @@ public class MachineController2 {
 			machineStatus.setText( cm.checkStatus());
 			
 			refresh.setDisable(true);
+			
+			fivec.setShape(new Circle(40));
+			fivec.setMaxSize(40,40);
+			tenc.setShape(new Circle(5));
+			tenc.setMaxSize(50,50);
+			twentyfivec.setShape(new Circle(5));
+			twentyfivec.setMaxSize(55,55);
 
 		}
 		/** Initialization that define a scale of 10 by default
@@ -84,6 +92,8 @@ public class MachineController2 {
 		@FXML protected void makeCoffee ( ActionEvent event) {
 			
 			setCoffee(event);
+			
+			finish.setText( "");
 			
 			moneyReturn.setText(cm.displayMoney());
 			
