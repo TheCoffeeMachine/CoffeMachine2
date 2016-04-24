@@ -13,7 +13,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			VBox root = FXMLLoader.load(getClass().getResource("CMXML2.xml"));
-			Scene scene = new Scene(root,800,500);
+			Scene scene = new Scene(root,700,700);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

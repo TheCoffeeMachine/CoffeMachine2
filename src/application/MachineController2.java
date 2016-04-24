@@ -1,5 +1,7 @@
 package application;
 
+import java.util.Random;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -11,7 +13,7 @@ import javafx.scene.shape.Circle;
 public class MachineController2 {
 
 		@FXML private Label finish, machineStatus, moneyStatus, moneyMissing, moneyReturn;
-		@FXML private Button fivec, tenc, twentyfivec, oned, fived, refresh;
+		@FXML private Button fivec, tenc, twentyfivec, oned, fived, refresh, swipeCard, payCard, payCash;
 		@FXML private Button natural, sugar, cream, sugarCream, bouillon;
 		
 		private CoffeeMachine cm;
@@ -27,11 +29,15 @@ public class MachineController2 {
 			cm = new CoffeeMachine();
 			
 			cm.setCoffeeType ("natural");
+			cm.setPayment("cash");
 			cm.init();
 			
 			machineStatus.setText( cm.checkStatus());
 			
 			refresh.setDisable(true);
+			swipeCard.setDisable(true);
+			payCard.setDisable(false);
+			payCash.setDisable (true);
 			
 			fivec.setShape(new Circle(40));
 			fivec.setMaxSize(40,40);
@@ -146,5 +152,42 @@ public class MachineController2 {
 			sugarCream.setDisable(false);
 			bouillon.setDisable(false);
 		}
+		
+		@FXML protected void payCard( ActionEvent event) {
+			
+			cm.setPayment("card");
+			fivec.setDisable(true);
+			tenc.setDisable(true);
+			twentyfivec.setDisable(true);
+			oned.setDisable(true);
+			fived.setDisable(true);
+			payCard.setDisable(true);
+			swipeCard.setDisable(false);
+			payCash.setDisable (false);
+			
+		}
+		
+		@FXML protected void payCash( ActionEvent event) {
+			
+			cm.setPayment("cash");
+			fivec.setDisable(false);
+			tenc.setDisable(false);
+			twentyfivec.setDisable(false);
+			oned.setDisable(false);
+			fived.setDisable(false);
+			swipeCard.setDisable(true);
+			payCard.setDisable(false);
+			payCash.setDisable (true);
+			
+		}
+		
+		@FXML protected void chargeCard( ActionEvent event) {
+			
+			Random ran = new Random();
+			int x = ran.nextInt(10);
+			
+			cm.chargeCard(x);
+		}
+		
 		
 	}

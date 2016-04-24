@@ -12,6 +12,12 @@
 	
 	<Label text=" "/>
 	
+	<HBox alignment="center" spacing="60">
+	<Button  fx:id="payCard" text="Pay with badge" onAction="#payCard"/>
+	<Button  fx:id="payCash" text="Pay cash" onAction="#payCash"/>
+	</HBox>
+	
+	
 	<HBox alignment="center" spacing="10">
 	<Label text="insert your money : " />
 	<Label fx:id= "moneyStatus" text=""/>
@@ -30,6 +36,8 @@
 	<Button  fx:id="oned" text="1 dollar" onAction="#addMoney"/>
 	<Button  fx:id="fived" text="5 dollars" onAction="#addMoney"/>
 	</HBox>
+	
+	<Button  fx:id="swipeCard" text="Swipe badge" onAction="#chargeCard"/>
 	
 	<Label text="Please select how you want your coffee" />
 	

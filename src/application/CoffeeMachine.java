@@ -7,8 +7,9 @@ public class CoffeeMachine {
 	BeverageFactory factory = new BeverageFactory( );
 	  BeverageStore store = new BeverageStore( factory );
 	  Beverage beverage;
+	  String payment;
 	  String drinkType;
-	  double price;
+	  //double price;
 	  
 	  public final DecimalFormat MONEY = new DecimalFormat("$##.00");
 
@@ -36,6 +37,7 @@ public class CoffeeMachine {
 	{
 	
 			MachineMoney.resetAmount();
+			MachineMoney.resetBadge();
 			beverage = store.orderDrink(drinkType);
 			System.out.println("you just ordered a " + beverage.getName( ) + "\n");
 			MachineStock.updateStock(drinkType);
@@ -55,15 +57,18 @@ public class CoffeeMachine {
 		{
 			return true;
 		}
-		else
+		else if (MachineMoney.checkCard() == true)
 			{
-			return false;
+			return true;
 			}
+		else return false;
+			
 	}
 	
 	public String displayMoney()
 	
 	{
+		if (payment == "cash"){
 		if (MachineMoney.getAmout() <= beverage.getPrice())
 		{
 			if (MachineMoney.getAmout() != beverage.getPrice())
@@ -75,6 +80,17 @@ public class CoffeeMachine {
 			{
 			return ("take you change " + MONEY.format((MachineMoney.getAmout() - beverage.getPrice())) );
 			}
+		}
+		else{
+		if (payment == "card"){
+			if (MachineMoney.checkCard() == true)
+			return ( beverage.getPrice() + " has been charged on your card" );
+			else return "This badge is not valid, please swipe a valid badge ";
+			}
+		else if (MachineMoney.getBadge() < 1)
+			return "Swipe your badge or pay by cash";
+		else return "An error occured";
+		}
 			
 		//return ("you put: " + MachineMoney.getAmout());
 	}
@@ -118,7 +134,13 @@ public class CoffeeMachine {
 		
 	}
 	
-	public void setPrice(double sp){
-		this.price = sp;;
+	public void chargeCard (int ID){
+		MachineMoney.setBadgeNumber(ID);
+		MachineMoney.checkCard();
 	}
+	
+	public void setPayment(String pay){
+		this.payment = pay;
+	}
+	
 }
