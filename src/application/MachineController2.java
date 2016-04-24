@@ -3,6 +3,8 @@ package application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 
 
@@ -14,10 +16,14 @@ public class MachineController2 {
 		
 		private CoffeeMachine cm;
 
-		/** Initialization that define a scale of 10 by default
+		/** Initialization that define natural coffee by default
 		It also enable to guess button and text field**/
 		@FXML public void initialize() {
 			
+			//ImageView iv = new ImageView(new Image(getClass().getResourceAsStream("src/image.png")));
+			
+			// iv.setImage(image2);
+			 
 			cm = new CoffeeMachine();
 			
 			cm.setCoffeeType ("natural");

@@ -4,13 +4,13 @@ import java.text.DecimalFormat;
 
 public class CoffeeMachine {
 	
-	  CoffeeFactory factory = new CoffeeFactory( );
-	  CoffeeStore store = new CoffeeStore( factory );
-	  Coffee coffee;
-	  String coffeeType;
+	BeverageFactory factory = new BeverageFactory( );
+	  BeverageStore store = new BeverageStore( factory );
+	  Beverage beverage;
+	  String drinkType;
 	  double price;
 	  
-	  public final DecimalFormat MONEY = new DecimalFormat("$##.##");
+	  public final DecimalFormat MONEY = new DecimalFormat("$##.00");
 
 	public CoffeeMachine()
 	{
@@ -36,9 +36,9 @@ public class CoffeeMachine {
 	{
 	
 			MachineMoney.resetAmount();
-			coffee = store.orderCoffee(coffeeType);
-			System.out.println("you just ordered a " + coffee.getName( ) + "\n");
-			MachineStock.updateStock(coffeeType);
+			beverage = store.orderDrink(drinkType);
+			System.out.println("you just ordered a " + beverage.getName( ) + "\n");
+			MachineStock.updateStock(drinkType);
 			afterpurchase();
 		
 	}
@@ -51,7 +51,7 @@ public class CoffeeMachine {
 	public boolean checkMoney()
 	{	
 		
-		if (MachineMoney.getAmout() >= coffee.getPrice())
+		if (MachineMoney.getAmout() >= beverage.getPrice())
 		{
 			return true;
 		}
@@ -64,16 +64,16 @@ public class CoffeeMachine {
 	public String displayMoney()
 	
 	{
-		if (MachineMoney.getAmout() <= coffee.getPrice())
+		if (MachineMoney.getAmout() <= beverage.getPrice())
 		{
-			if (MachineMoney.getAmout() != coffee.getPrice())
-		return ( "Please insert " + MONEY.format((coffee.getPrice() - MachineMoney.getAmout())));
+			if (MachineMoney.getAmout() != beverage.getPrice())
+		return ( "Please insert " + MONEY.format((beverage.getPrice() - MachineMoney.getAmout())));
 			else 
 		return ( "You put " + MONEY.format( MachineMoney.getAmout()) + " ready to order");
 		}
 		else
 			{
-			return ("take you change " + MONEY.format((MachineMoney.getAmout() - coffee.getPrice())) );
+			return ("take you change " + MONEY.format((MachineMoney.getAmout() - beverage.getPrice())) );
 			}
 			
 		//return ("you put: " + MachineMoney.getAmout());
@@ -113,8 +113,8 @@ public class CoffeeMachine {
 	
 	public void setCoffeeType(String ct)
 	{
-		this.coffeeType = ct;
-		coffee = store.setCoffee(ct);
+		this.drinkType = ct;
+		beverage = store.setDrink(ct);
 		
 	}
 	

@@ -1,13 +1,21 @@
 package application;
 
 
-abstract public class Coffee {
+abstract public class Beverage {
 	
-   String name;
-   String type;
-   double price;
+  private String name;
+  private String type;
+  private double price;
  
 
+ public Beverage (String name, String type, double price){
+	 
+	 this.name = name;
+	 this.type = type;
+	 this.price = price;
+	 
+ }
+ 
  public double getPrice(){
 	 return price ;
  }

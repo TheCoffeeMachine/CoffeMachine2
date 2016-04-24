@@ -1,12 +1,15 @@
 package application;
 
-public class Bouillon extends Coffee {
+public class Bouillon extends Beverage  {
 
 
 	 public Bouillon() {
-			name = "bouillon";
-			type = "hotWater";
-			price = .25;
+		 
+			//name = "bouillon";
+			//type = "hotWater";
+			//price = .25;
+			
+			super("bouillon","hotWater",.25);
 			
 		}
 
