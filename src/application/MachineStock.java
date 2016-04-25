@@ -8,8 +8,9 @@ public class MachineStock {
 	private static int StockCapacity = 100;
 	
 	
-	// We will decrement the stock each time an order is 
-	//passed according to the type of coffee 
+	/** This method decrease the stock each time a 
+	 * beverage is pored according to what ingredients 
+	 * have been used for it **/
 	public static void updateStock (String type)
 	{	
 		if (type == "natural"){

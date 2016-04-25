@@ -30,7 +30,6 @@ public class MachineController2 {
 			
 			cm.setCoffeeType ("natural");
 			cm.setPayment("cash");
-			cm.init();
 			
 			machineStatus.setText( cm.checkStatus());
 			
@@ -156,6 +155,8 @@ public class MachineController2 {
 			bouillon.setDisable(false);
 		}
 		
+		/** This method set the type of payment as card and disable 
+		 * all the cash button that are not needed **/
 		@FXML protected void payCard( ActionEvent event) {
 			
 			cm.setPayment("card");
@@ -173,6 +174,8 @@ public class MachineController2 {
 			
 		}
 		
+		/** This method set the type of payment as cash and disable 
+		 * all the card button that are not needed **/
 		@FXML protected void payCash( ActionEvent event) {
 			
 			cm.setPayment("cash");
@@ -189,6 +192,8 @@ public class MachineController2 {
 			moneyReturn.setText( "Pay with cash");
 		}
 		
+		/** This method reads the card and gets the ID in order to 
+		 * charge users when they makes their choices **/
 		@FXML protected void chargeCard( ActionEvent event) {
 			
 			Random ran = new Random();
