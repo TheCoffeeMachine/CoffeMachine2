@@ -52,7 +52,6 @@ public class CoffeeMachine {
 	
 	public boolean checkMoney()
 	{	
-		
 		if (MachineMoney.getAmout() >= beverage.getPrice())
 		{
 			return true;
@@ -61,12 +60,10 @@ public class CoffeeMachine {
 			{
 			return true;
 			}
-		else return false;
-			
+		else return false;	
 	}
 	
 	public String displayMoney()
-	
 	{
 		if (payment == "cash"){
 		if (MachineMoney.getAmout() <= beverage.getPrice())
@@ -82,17 +79,19 @@ public class CoffeeMachine {
 			}
 		}
 		else{
-		if (payment == "card"){
-			if (MachineMoney.checkCard() == true)
-			return ( beverage.getPrice() + " has been charged on your card" );
-			else return "This badge is not valid, please swipe a valid badge ";
-			}
-		else if (MachineMoney.getBadge() < 1)
-			return "Swipe your badge or pay by cash";
-		else return "An error occured";
-		}
+			if (payment == "card"){
 			
-		//return ("you put: " + MachineMoney.getAmout());
+				if (MachineMoney.checkCard() == true)
+				return ( beverage.getPrice() + " has been charged on your card" );
+				
+				if (MachineMoney.getBadge() < 0)
+				return "Swipe your badge or pay by cash";
+				
+				else
+					return "This badge is not valid, please swipe a valid badge ";
+			}
+		}
+		return "an error occured";	
 	}
 	
 	public String showMoney(){
@@ -109,7 +108,6 @@ public class CoffeeMachine {
 			else if (MachineStock.getCreamStock() <= 0)
 				return  ("The cream needs to be refreshed");
 		}
-		
 		//We should reset the money count here 
 		
 		return (" Thank you for your purchase, the next coffee is now ready to be served");

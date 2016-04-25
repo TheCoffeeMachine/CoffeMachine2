@@ -130,6 +130,9 @@ public class MachineController2 {
 				cream.setDisable(true);
 				sugarCream.setDisable(true);
 				bouillon.setDisable(true);
+				payCash.setDisable(true);
+				swipeCard.setDisable(true);
+				payCard.setDisable(true);
 				}
 			
 			}
