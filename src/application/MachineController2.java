@@ -168,6 +168,9 @@ public class MachineController2 {
 			swipeCard.setDisable(false);
 			payCash.setDisable (false);
 			
+			finish.setText( "");
+			moneyReturn.setText( "Swipe your badge");
+			
 		}
 		
 		@FXML protected void payCash( ActionEvent event) {
@@ -182,6 +185,8 @@ public class MachineController2 {
 			payCard.setDisable(false);
 			payCash.setDisable (true);
 			
+			finish.setText( "");
+			moneyReturn.setText( "Pay with cash");
 		}
 		
 		@FXML protected void chargeCard( ActionEvent event) {
@@ -190,6 +195,7 @@ public class MachineController2 {
 			int x = ran.nextInt(10);
 			
 			cm.chargeCard(x);
+			moneyReturn.setText( "Badge swiped");
 		}
 		
 		

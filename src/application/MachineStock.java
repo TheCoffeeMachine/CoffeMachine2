@@ -36,7 +36,7 @@ public class MachineStock {
 		//} else if (type == "Sugar"){
 			SugarStock += StockCapacity;
 		//} else if (type == "Cream"){
-			SugarStock += StockCapacity;
+			CreamStock += StockCapacity;
 		//}
 		
 	}
