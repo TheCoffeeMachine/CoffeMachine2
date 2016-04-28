@@ -1,6 +1,7 @@
 package application;
 
 
+
 public class CoffeeSugarCream extends Beverage  {
 
 	public CoffeeSugarCream() {

@@ -2,15 +2,20 @@
 
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
 
 	<VBox xmlns:fx="http://javafx.com/fxml" 
 	
-		fx:controller="application.MachineController2" alignment="center" spacing="20" >
+		fx:controller="application.MachineController2" alignment="center" spacing="10" >
 		<Label text="Coffee Machine"/>
 	
 	<Label fx:id= "machineStatus" text=""/>
 	
-	<Label text=" "/>
+    	<ImageView>
+      		<Image fx:id="image" url="@image.jpg" />
+   		</ImageView>
+
 	
 	<HBox alignment="center" spacing="60">
 	<Button  fx:id="payCard" text="Pay with badge" onAction="#payCard"/>

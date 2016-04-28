@@ -1,6 +1,7 @@
 package application;
 
 public class MachineMoney {
+	
 
 	private static double amount;
 	private static int badgeNumber;

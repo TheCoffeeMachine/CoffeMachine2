@@ -2,6 +2,7 @@ package application;
 
 public class MachineStock {
 	
+	
 	private static int CoffeeStock = 3;
 	private static int SugarStock = 100;
 	private static int CreamStock = 100;

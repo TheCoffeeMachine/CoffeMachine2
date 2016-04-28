@@ -1,5 +1,6 @@
 package application;
 
+
 public class BeverageFactory {
 
 	 public Beverage  makeDrink( String type ) {

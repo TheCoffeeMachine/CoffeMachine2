@@ -1,5 +1,7 @@
 
 package application;
+
+
 	
 import javafx.application.Application;
 import javafx.fxml.*;
@@ -13,7 +15,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			VBox root = FXMLLoader.load(getClass().getResource("CMXML2.xml"));
-			Scene scene = new Scene(root,700,700);
+			Scene scene = new Scene(root,700,900);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

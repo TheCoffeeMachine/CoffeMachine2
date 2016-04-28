@@ -10,11 +10,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 
 
+
 public class MachineController2 {
 
 		@FXML private Label finish, machineStatus, moneyStatus, moneyMissing, moneyReturn;
 		@FXML private Button fivec, tenc, twentyfivec, oned, fived, refresh, swipeCard, payCard, payCash;
 		@FXML private Button natural, sugar, cream, sugarCream, bouillon;
+		@FXML private Image image;
 		
 		private CoffeeMachine cm;
 
@@ -22,9 +24,9 @@ public class MachineController2 {
 		It also enable to guess button and text field**/
 		@FXML public void initialize() {
 			
-			//ImageView iv = new ImageView(new Image(getClass().getResourceAsStream("src/image.png")));
+			//ImageView iv = new ImageView(new Image(getClass().getResourceAsStream("src/image.jpg")));
 			
-			// iv.setImage(image2);
+			//iv.setImage(image);
 			 
 			cm = new CoffeeMachine();
 			
@@ -40,9 +42,9 @@ public class MachineController2 {
 			
 			fivec.setShape(new Circle(40));
 			fivec.setMaxSize(40,40);
-			tenc.setShape(new Circle(5));
+			tenc.setShape(new Circle(55));
 			tenc.setMaxSize(50,50);
-			twentyfivec.setShape(new Circle(5));
+			twentyfivec.setShape(new Circle(55));
 			twentyfivec.setMaxSize(55,55);
 
 		}

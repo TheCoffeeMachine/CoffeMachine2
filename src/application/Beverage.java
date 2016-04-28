@@ -1,6 +1,7 @@
 package application;
 
 
+
 abstract public class Beverage {
 	
   private String name;
@@ -36,7 +37,7 @@ abstract public class Beverage {
  }
 
  public void finishPooring() {
-  System.out.println("Your " + name + " is now ready");
+  //System.out.println("Your " + name + " is now ready");
  }
 
  public String toString( ) {
